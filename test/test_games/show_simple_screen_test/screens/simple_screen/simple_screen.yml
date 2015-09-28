@@ -1,0 +1,4 @@
+type: game_screen
+objects:
+  - type: text
+    name: Hallo Welt
