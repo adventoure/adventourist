@@ -18,3 +18,5 @@ Future<String> readFile(String file_name) {
 Future<dynamic> readYamlFile(String file_name) {
   return readFile(file_name).then(loadYaml);
 }
+
+Future<Directory> createDirectory(String dirName) => (new Directory(dirName)).create(recursive: true);

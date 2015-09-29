@@ -1,12 +1,14 @@
 
 
-import "../lib/read_file.dart";
+import "../lib/file_system.dart" as FileSystem;
 
 void main() {
 
-  readYamlFile("game.yml").then((gameConfig) {
+  FileSystem.readYamlFile("game.yml").then((gameConfig) {
     var gameName = gameConfig["name"];
     print("Generating Game '$gameName'...");
+
+    return FileSystem.createDirectory("build");
   });
 
 }
