@@ -20,3 +20,10 @@ Future<dynamic> readYamlFile(String file_name) {
 }
 
 Future<Directory> createDirectory(String dirName) => (new Directory(dirName)).create(recursive: true);
+
+void deleteDirectory(String dirName) {
+  var dir = new Directory(dirName);
+  if(dir.existsSync()) {
+    dir.deleteSync(recursive: true);
+  }
+}

@@ -1,9 +1,12 @@
 #!/bin/bash
 
 case "$1" in
-"run")
+"build")
   pub get
-  pub run bin/main.dart
+  dir=`pwd`
+  cd $2
+  export ADVENTOURIST_HOME=$dir
+  dart $dir/bin/main.dart build
   ;;
 "test")
   pub run test $2
@@ -13,10 +16,10 @@ case "$1" in
   echo "========================"
   echo ""
   echo "You can use the following commands:"
-  echo "  ./go run          Runs the app"
-  echo "  ./go test         Runs all tests"
-  echo "  ./go test [file]  Runs the specified test"
-  echo "  ./go help         print this message"
+  echo "  ./go build [game-dir]     Runs an game"
+  echo "  ./go test                 Runs all tests"
+  echo "  ./go test [file]          Runs the specified test"
+  echo "  ./go help                 print this message"
 esac
 
 
