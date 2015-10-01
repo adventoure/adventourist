@@ -16,7 +16,7 @@ case "$1" in
   echo "========================"
   echo ""
   echo "You can use the following commands:"
-  echo "  ./go build [game-dir]     Runs an game"
+  echo "  ./go build [game-dir]     Builds a game"
   echo "  ./go test                 Runs all tests"
   echo "  ./go test [file]          Runs the specified test"
   echo "  ./go help                 print this message"

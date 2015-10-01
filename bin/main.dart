@@ -13,12 +13,15 @@ void main() {
     Process.run("dart2js", [
       "-o",
       buildDir.path + "/canvas_runtime.js",
-      env["ADVENTOURIST_HOME"] + "/lib/runtime/canvas_runtime.dart"
+      env["ADVENTOURIST_HOME"] + "/lib/runtime/canvas/canvas_runtime.dart"
     ]).then((ProcessResult result) {
       print(result.stderr);
       print(result.stdout);
     });
 
     Process.run("cp", ["-R", env["ADVENTOURIST_HOME"] + "/lib/runtime/.", buildDir.path + "/"]);
+    Process.run("cp", ["-R", "game.yml", buildDir.path + "/"]);
+    Process.run("cp", ["-R", "screens", buildDir.path + "/"]);
+    Process.run("cp", ["-R", "testSprite.png", buildDir.path + "/"]);
   });
 }
