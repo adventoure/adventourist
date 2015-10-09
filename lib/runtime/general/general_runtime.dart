@@ -7,3 +7,4 @@ part "helpers/AssetsLoader.dart";
 part "graphics/RenderSystem.dart";
 part "math/Scale.dart";
 part "math/Range.dart";
+part "math/CoordSystem.dart";

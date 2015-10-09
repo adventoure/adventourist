@@ -6,11 +6,13 @@ class CanvasRenderSystem extends RenderSystem {
 
   CanvasRenderSystem(String canvasId) {
     CanvasElement stage = querySelector('#' + canvasId);
+
     _renderContext = stage.context2D;
   }
 
+
   @override
-  void drawSprite(SpriteIdentifier sprite, num x, num y, {num scaleX: 1, num scaleY: 1}) {
+  void drawSprite(SpriteIdentifier sprite, double x, double y, {double scaleX: 1, double scaleY: 1}) {
     ImageElement image = (sprite as CanvasSpriteIdentifier).image;
     _renderContext.drawImage(image, x, y);
   }

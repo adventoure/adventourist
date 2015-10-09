@@ -14,7 +14,7 @@ void main() {
   assetsLoader.loadYaml("game.yml").then((gameData) {
     querySelector("title").text = gameData["name"];
   });
-  
+
   RenderSystem renderer = new CanvasRenderSystem('game_stage');
   renderer.registerSprite("testSprite.png").then((sprite) {
     renderer.drawSprite(sprite, 10, 30);

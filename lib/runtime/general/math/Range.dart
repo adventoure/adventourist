@@ -7,6 +7,8 @@ class Range {
 
   Range(this.start, this.end);
 
+  double get mid => size.toDouble() / 2.0 + start.toDouble();
+
   /// Checks whether [value] is in [start,end)
   bool includes(num value) => value >= start && value < end;
 
