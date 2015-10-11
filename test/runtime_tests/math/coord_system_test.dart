@@ -53,5 +53,21 @@ void main() {
       checkPoint(uut, new Point(16,9), new Point(1650, 900));
     });
 
+    test(".scale[Width,Height] scales a length correctly", () {
+      var widthDomain = new Range(0, 16);
+      var heightDomain = new Range(0, 9);
+      var widthRange = new Range(0, 1700);
+      var heightRange = new Range(0, 900);
+
+      var uut = new CoordSystem.scaledRatio(widthDomain, heightDomain, widthRange, heightRange);
+
+      expect(uut.scaleWidth(8), equals(800));
+      expect(uut.scaleHeight(7), equals(700));
+
+      uut = new CoordSystem.scaled(widthDomain, heightDomain, widthRange, heightRange);
+      expect(uut.scaleWidth(16), equals(1700));
+      expect(uut.scaleHeight(4.5), equals(450));
+    });
+
   });
 }

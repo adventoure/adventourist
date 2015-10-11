@@ -2,7 +2,7 @@ part of general_runtime;
 
 class CoordSystem {
 
-  Scale widthScale, heightScale;
+  LinearScale widthScale, heightScale;
 
   CoordSystem.scaled(Range widthDomain, Range heightDomain, Range widthRange, Range heightRange) {
     this.widthScale = new LinearScale.fromRanges(widthDomain, widthRange);
@@ -40,4 +40,7 @@ class CoordSystem {
 
   Point at(num x, num y) => new Point(widthScale[x], heightScale[y]);
   Point atPoint(Point point) => at(point.x, point.y);
+
+  num scaleWidth(num length) => widthScale.range.size * (length / widthScale.domain.size);
+  num scaleHeight(num length) => heightScale.range.size * (length / heightScale.domain.size);
 }

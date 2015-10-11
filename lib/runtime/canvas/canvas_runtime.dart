@@ -1,6 +1,6 @@
 library canvas_runtime;
 
-import 'dart:html';
+import 'dart:html' hide Range;
 import 'dart:async';
 import '../general/general_runtime.dart';
 
@@ -17,7 +17,7 @@ void main() {
 
   RenderSystem renderer = new CanvasRenderSystem('game_stage');
   renderer.registerSprite("testSprite.png").then((sprite) {
-    renderer.drawSprite(sprite, 10, 30);
+    renderer.drawSprite(sprite, 8.toDouble(), 4.5);
   }, onError: () {
     window.alert("error");
   });
